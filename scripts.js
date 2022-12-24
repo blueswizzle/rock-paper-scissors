@@ -15,7 +15,7 @@ function getComputerChoice(){
         case 2:
             computerChoice = "scissor";        
     }
-    console.log(computerChoice);
+
 }
 
 
@@ -24,7 +24,8 @@ function getRndInteger(min, max) {
   }
 
 function getPlayerChoice(){
-    playerChoice = prompt("Enter your choice: ");
+    let choice = prompt("Enter your choice (Type rock, paper, or scissor. Case insensitive): ");
+    playerChoice = choice.toLocaleLowerCase();
     console.log("Player Choice: " + playerChoice);
 
 }
