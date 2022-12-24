@@ -15,7 +15,6 @@ function getComputerChoice(){
         case 2:
             computerChoice = "scissor";        
     }
-    console.log("Computer choice: " + computerChoice);
 }
 
 
@@ -26,17 +25,25 @@ function getRndInteger(min, max) {
 function getPlayerChoice(){
     let choice = prompt("Enter your choice (Type rock, paper, or scissor. Case insensitive): ");
     playerChoice = choice.toLocaleLowerCase();
-    console.log("Player choice: " + playerChoice);
 }
 
 function playRound(playerChoice,computerChoice){
     if(playerChoice === computerChoice){
         console.log("You both chose " + playerChoice + ". It\s a tie!");
     }else if (playerChoice === "rock" && computerChoice === "scissor" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissor" && computerChoice === "paper"){
-        console.log("You won!");
+        console.log("You won! " + playerChoice + " beats " + computerChoice);
         playerWins++;
     }else{
-        console.log("You lost");
+        console.log("You lost! " + computerChoice + " beats " + playerChoice);
         computerWins++;
     }
+}
+
+function playGame(){
+    for(let i =0; i < 5; i++){
+        getComputerChoice();
+        getPlayerChoice();
+        playRound(playerChoice,computerChoice);
+    }
+    console.log("Your wins: " + playerWins + "\nComputer Wins: " + computerWins);
 }
