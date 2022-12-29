@@ -8,4 +8,33 @@
 
 body{
     font-family: 'Work Sans', sans-serif;
+    background-color: black;
+    color:white;
+
+}
+.background-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-container img {
+    max-width: 1000px;
+    height:auto;
+    object-fit: contain;
+}
+.heading-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.heading{
+    font-size: 2rem;
+    padding: 1rem;
+}
+.sentence{
+    font-size: 1.2rem;
+    font-style: oblique;
 }
