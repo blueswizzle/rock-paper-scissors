@@ -38,3 +38,38 @@ body{
     font-size: 1.2rem;
     font-style: oblique;
 }
+.options-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.options-header{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+    padding: 3em;
+}
+.options div{
+    margin-right: 3rem;
+
+}
+.options img{
+    max-width: 25vw;
+    max-height: 10vw;
+    min-width: 18vw;
+    min-height: 6vw;
+    border:0.2rem solid black;
+    border-radius: 25%;
+    transition: all .07s ease;
+    
+}
+.options img:hover{
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
