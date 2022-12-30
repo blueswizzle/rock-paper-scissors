@@ -66,18 +66,29 @@ body{
     border:0.2rem solid black;
     border-radius: 25%;
     transition: all .07s ease;
-    
 }
 .options img:hover{
   transform: scale(1.1);
   border-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
+  cursor: pointer;
+}
+.results-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
+.result-text{
+    text-align: center;
+    margin-bottom: 3rem;
+}
 .score-container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 3rem;
 }
 .player-score,
 .computer-score{

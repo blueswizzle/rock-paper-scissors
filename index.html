@@ -23,29 +23,37 @@
         <img src="images/background.png" alt="Image">
     </div>
     <div class="options-container">
-        <h1 class="options-header">Choose your Options:</h1>
+        <h1 class="options-header">Choose your Options Below. First to 5 points wins the game:</h1>
         <div class="options">
-            <div class="rock">
-                <img src="images/rock.png" alt ="Rock">
+            <div id="rock">
+                <img src="images/rock.png" class = "choice" alt ="Rock">
             </div>
-            <div class="paper">
-                <img src="images/paper.png" alt="Paper">
+            <div id="paper">
+                <img src="images/paper.png"  class = "choice" alt="Paper">
             </div>
-            <div class="scissors">
-                <img src="images/scissors.png" alt="Scissors">
+            <div id="scissors">
+                <img src="images/scissors.png" class = "choice" alt="Scissors">
             </div>
         </div>
     </div>
 
-    <div class="score-container">
-        <div class="player-score">
-            <h2>Player Wins:</h2>
-            <h2 class="player-counter">0</h2>
+    <div class="results-container">
+        
+        <h2 class="result-text"></h2>
+        
+        <div class="score-container">
+            <div class="player-score">
+                <h2>Player Wins:</h2>
+                <h2 class="player-counter">0</h2>
+            </div>
+            <div class="computer-score">
+                <h2>Computer wins:</h2>
+                <h2 class="computer-counter">0</h2>
+            </div>
         </div>
-        <div class="computer-score">
-            <h2>Computer wins:</h2>
-            <h2 class="computer-counter">0</h2>
-        </div>
+
     </div>
+
+    
 </body>
 </html>

@@ -2,6 +2,26 @@ let computerChoice;
 let playerChoice;
 let playerWins = 0;
 let computerWins = 0;
+let text  = document.querySelector('.result-text');
+let playerScoreText = document.querySelector('.player-counter');
+let computerScoreText = document.querySelector('.computer-counter');
+const options = document.querySelectorAll('.choice');
+
+
+options.forEach(option => option.addEventListener('click', playRound));
+
+function assignPlayerChoice(e){
+    if(e.target == options[0]){
+        playerChoice = "rock";
+        console.log(playerChoice);
+    }else if(e.target == options[1]){
+        playerChoice = "paper";
+        console.log(playerChoice);
+    }else if(e.target == options[2]){
+        playerChoice = "scissors";
+        console.log(playerChoice);
+    }
+}
 
 function getComputerChoice(){
     let num = getRndInteger(0,2);
@@ -13,7 +33,7 @@ function getComputerChoice(){
             computerChoice = "paper";
             break;
         case 2:
-            computerChoice = "scissor";        
+            computerChoice = "scissors";        
     }
 }
 
@@ -22,28 +42,37 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
-function getPlayerChoice(){
-    let choice = prompt("Enter your choice (Type rock, paper, or scissor. Case insensitive): ");
-    playerChoice = choice.toLocaleLowerCase();
-}
-
-function playRound(playerChoice,computerChoice){
+function compareResults(){
     if(playerChoice === computerChoice){
-        console.log("You both chose " + playerChoice + ". It\s a tie!");
-    }else if (playerChoice === "rock" && computerChoice === "scissor" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissor" && computerChoice === "paper"){
-        console.log("You won! " + playerChoice + " beats " + computerChoice);
+        text.innerHTML = "You both chose " + playerChoice.toUpperCase() + ". It\'s a tie!";
+    }else if (playerChoice === "rock" && computerChoice === "scissors" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissors" && computerChoice === "paper"){
+        text.innerHTML = "You won! " + playerChoice.toUpperCase() + " beats " + computerChoice.toUpperCase() + "!";
         playerWins++;
     }else{
-        console.log("You lost! " + computerChoice + " beats " + playerChoice);
+        text.innerHTML = "You lose! " + computerChoice.toUpperCase() + " beats " + playerChoice.toUpperCase() + "!";
         computerWins++;
     }
 }
 
-function playGame(){
-    for(let i =0; i < 5; i++){
-        getComputerChoice();
-        getPlayerChoice();
-        playRound(playerChoice,computerChoice);
+function printScores(){
+    playerScoreText.innerHTML = playerWins;
+    computerScoreText.innerHTML = computerWins;
+}
+function resetGame(){
+    playerWins = 0;
+    computerWins = 0;
+}
+function playRound(e){
+    if(playerWins >=5 || computerWins >=5){
+        return;
     }
-    console.log("Your wins: " + playerWins + "\nComputer Wins: " + computerWins);
+    assignPlayerChoice(e);
+    getComputerChoice();
+    compareResults();
+    printScores();
+    if(computerWins ==5){
+        text.innerHTML = "Game Over! You lose! Get gud!";
+    }else if(playerWins == 5){
+        text.innerHTML = "Game Over! You won!";
+    }
 }
