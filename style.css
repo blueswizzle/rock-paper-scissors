@@ -8,7 +8,7 @@
 
 body{
     font-family: 'Work Sans', sans-serif;
-    background-color: black;
+    background-color: #222831;
     color:white;
 
 }
@@ -27,7 +27,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    background-color: #111720;
 }
 
 .heading{
@@ -37,6 +37,7 @@ body{
 .sentence{
     font-size: 1.2rem;
     font-style: oblique;
+    margin-bottom: 1.2rem;
 }
 .options-container{
     display: flex;
@@ -96,4 +97,19 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111720;
+    font-size: 1.1em;
+    padding:1em;
+}
+.footer a:link,a:visited{
+    text-decoration: none;
+    color:white;
+}
+.footer a:link:hover{
+    text-decoration: underline;
 }
