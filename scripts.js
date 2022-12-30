@@ -1,5 +1,5 @@
-let computerChoice;
-let playerChoice;
+let computerChoice= "";
+let playerChoice = "";
 let playerWins = 0;
 let computerWins = 0;
 let text  = document.querySelector('.result-text');
@@ -58,10 +58,7 @@ function printScores(){
     playerScoreText.innerHTML = playerWins;
     computerScoreText.innerHTML = computerWins;
 }
-function resetGame(){
-    playerWins = 0;
-    computerWins = 0;
-}
+
 function playRound(e){
     if(playerWins >=5 || computerWins >=5){
         return;
